@@ -10,6 +10,10 @@ namespace TI_NET_2023_DemoOO_RPG.Entities.Heroes
     public class Human : Hero
     {
 
+        public Human() 
+        {
+        }
+
         public Human(string name)
         {
             Name = name;
@@ -26,6 +30,13 @@ namespace TI_NET_2023_DemoOO_RPG.Entities.Heroes
         {
             Console.WriteLine("Jackpot!");
             e.TakeDamage(Dice.Throws(DiceType.D10,5));
+        }
+
+        public override void GenerateStats()
+        {
+            base.GenerateStats();
+            Strength += 1;
+            Stamina += 1;
         }
     }
 }

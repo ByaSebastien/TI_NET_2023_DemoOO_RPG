@@ -9,10 +9,20 @@ namespace TI_NET_2023_DemoOO_RPG.Entities.Heroes
 {
     public class Dwarf : Hero
     {
+        public Dwarf()
+        {
+        }
+
         public override void Attack(Entity e)
         {
             Console.WriteLine("Et ma hache!");
             e.TakeDamage(Dice.Throws(DiceType.D8,3));
+        }
+
+        public override void GenerateStats()
+        {
+            base.GenerateStats();
+            Stamina += 2;
         }
     }
 }

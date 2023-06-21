@@ -13,8 +13,7 @@ namespace TI_NET_2023_DemoOO_RPG.Entities
 
         public Entity()
         {
-            Strength = Dice.Throws(DiceType.D6, 5, 3);
-            Stamina = Dice.Throws(DiceType.D6, 5, 3);
+            GenerateStats();
             Hp = Strength + Stamina;
             CurrentHp = Hp;
         }
@@ -36,5 +35,7 @@ namespace TI_NET_2023_DemoOO_RPG.Entities
         {
             CurrentHp -= amount;
         }
+
+        public abstract void GenerateStats();
     }
 }

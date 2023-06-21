@@ -10,6 +10,9 @@ namespace TI_NET_2023_DemoOO_RPG.Entities.Heroes
 {
     public abstract class Hero : Entity, IGold, ILeather
     {
+        public Hero()
+        {
+        }
         public string Name { get; set; }
 
         public int Gold { get; set; } 
@@ -31,6 +34,12 @@ namespace TI_NET_2023_DemoOO_RPG.Entities.Heroes
             {
                 Leather += l.Leather;
             }
+        }
+
+        public override void GenerateStats()
+        {
+            Strength = Dice.Throws(DiceType.D10, 5, 3);
+            Stamina = Dice.Throws(DiceType.D10, 5, 3);
         }
     }
 }

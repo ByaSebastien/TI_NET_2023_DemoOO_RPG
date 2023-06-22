@@ -16,14 +16,20 @@ for (int i = 0; i < 1000; i++)
         case 0:
         case 1:
         case 2:
-            monsters.Add(new Wolf());
+            Wolf wolf = new Wolf();
+            wolf.DieEvent += dante.Loot;
+            monsters.Add(wolf);
             break;
         case 3:
         case 4:
-            monsters.Add(new Troll());
+            Troll troll = new Troll();
+            troll.DieEvent += dante.Loot;
+            monsters.Add(troll);
             break;
         case 5:
-            monsters.Add(new Dragon());
+            Dragon dragon = new Dragon();
+            dragon.DieEvent += dante.Loot;
+            monsters.Add(dragon);
             break;
     }
 }

@@ -28,12 +28,15 @@ namespace TI_NET_2023_DemoOO_RPG.Entities.Heroes
         {
             if(e is IGold g)
             {
+                Console.WriteLine($"{this.Name} loot {g.GetType().Name} et obtient {g.Gold} Or");
                 Gold += g.Gold;
             }
             if(e is ILeather l)
             {
+                Console.WriteLine($"{this.Name} loot {l.GetType().Name} et obtient {l.Leather} Or");
                 Leather += l.Leather;
             }
+            Heal();
         }
 
         public override void GenerateStats()
